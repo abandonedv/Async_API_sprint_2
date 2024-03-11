@@ -1,0 +1,234 @@
+{
+  "endpoint": "/api/v1/films",
+  "expected_response": [
+    {
+      "actors": [
+        {
+          "id": "1862f3c7-1fca-4abe-9de2-31443e69bcfd",
+          "name": "Christopher Neame"
+        },
+        {
+          "id": "2313ca7b-c5c5-4876-a684-f1b275985672",
+          "name": "Angela Harry"
+        },
+        {
+          "id": "303153fc-4ca1-4e57-b5a8-3bfdd505c12d",
+          "name": "Jason Court"
+        },
+        {
+          "id": "4f5cd43c-08dd-41ce-a0ba-87161f5199ee",
+          "name": "Valerie Wildman"
+        }
+      ],
+      "actors_names": [
+        "Christopher Neame",
+        "Angela Harry",
+        "Jason Court",
+        "Valerie Wildman"
+      ],
+      "description": "You play as Kyle Katarn, a mercenary whose skills progress into becoming a Jedi knight, to stop a team of dark Jedis from taking the valley of the Jedi's power.",
+      "director": "Scott Ewers",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "id": "6d867402-f033-4d30-ae20-a149cfa5cacf",
+      "imdb_rating": 8.7,
+      "title": "Star Wars: Jedi Knight - Dark Forces II",
+      "writers": [
+        {
+          "id": "7ddd80c9-c932-4a35-922b-d9fd2360c1fa",
+          "name": "Justin Chin"
+        }
+      ],
+      "writers_names": [
+        "Justin Chin"
+      ]
+    },
+    {
+      "actors": [],
+      "actors_names": [],
+      "description": "After leaving the war ravaged and resource depleted world of Coral a ship named Pioneer II has approached the planet Ragol. But a mysterious event surrounding the first landing party of ...",
+      "director": "Hidenobu Hasebe",
+      "genre": [
+        "Action",
+        "Animation",
+        "Fantasy"
+      ],
+      "id": "a58961cb-0b46-49f5-8a59-20b0118f57b4",
+      "imdb_rating": 8.7,
+      "title": "Phantasy Star Online Episode I & II",
+      "writers": [
+        {
+          "id": "07ced051-0b0c-4f76-8980-05c3167d8e2a",
+          "name": "Yuji Naka"
+        },
+        {
+          "id": "84b79bc9-4ca6-4b45-8eab-a016a5868a2d",
+          "name": "Rieko Kodama"
+        },
+        {
+          "id": "89faaa39-e854-45c1-b5f5-bc2d490028b5",
+          "name": "Atsushi Kanno"
+        }
+      ],
+      "writers_names": [
+        "Yuji Naka",
+        "Rieko Kodama",
+        "Atsushi Kanno"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "d115d4c3-daf9-45ba-8034-1eb07b3be2f3",
+          "name": "Rachid Oumakhlouf"
+        },
+        {
+          "id": "e424a80e-4cf6-4ada-8409-f82056a54564",
+          "name": "Nils Bento-Connault"
+        }
+      ],
+      "actors_names": [
+        "Rachid Oumakhlouf",
+        "Nils Bento-Connault"
+      ],
+      "description": "9 years old Matt is finding a 20 euro bill on the pavement. Matt is seeing a soldier in the restaurant which reminds his late father who was a soldier, and he changes his mind to pay it ...",
+      "director": "Reshan Fernando",
+      "genre": [
+        "Drama",
+        "Short"
+      ],
+      "id": "d755d600-296a-4c91-98b9-17107a5e63f5",
+      "imdb_rating": 8.7,
+      "title": "A Gold Star Kid",
+      "writers": [
+        {
+          "id": "8d026eb1-aaab-4b1f-b9f9-cd64bb6d46fc",
+          "name": "Reshan Fernando"
+        }
+      ],
+      "writers_names": [
+        "Reshan Fernando"
+      ]
+    },
+    {
+      "actors": [],
+      "actors_names": [],
+      "description": "Brent Hull is a man on a mission to \"quit building crap and build more beautiful things.\" Along with his faithful dog Romeo, Brent and his team from Hull Historical are saving America's architectural history one project at time.",
+      "director": "",
+      "genre": [
+        "Reality-TV"
+      ],
+      "id": "fd78a0e5-d4ec-435e-8994-4ccbdfc4e60b",
+      "imdb_rating": 8.7,
+      "title": "Lone Star Restoration",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "26e83050-29ef-4163-a99d-b546cac208f8",
+          "name": "Mark Hamill"
+        },
+        {
+          "id": "5b4bf1bc-3397-4e83-9b17-8b10c6544ed1",
+          "name": "Harrison Ford"
+        },
+        {
+          "id": "b5d2b63a-ed1f-4e46-8320-cf52a32be358",
+          "name": "Carrie Fisher"
+        },
+        {
+          "id": "e039eedf-4daf-452a-bf92-a0085c68e156",
+          "name": "Peter Cushing"
+        }
+      ],
+      "actors_names": [
+        "Mark Hamill",
+        "Harrison Ford",
+        "Carrie Fisher",
+        "Peter Cushing"
+      ],
+      "description": "The Imperial Forces, under orders from cruel Darth Vader, hold Princess Leia hostage in their efforts to quell the rebellion against the Galactic Empire. Luke Skywalker and Han Solo, captain of the Millennium Falcon, work together with the companionable droid duo R2-D2 and C-3PO to rescue the beautiful princess, help the Rebel Alliance and restore freedom and justice to the Galaxy.",
+      "director": "George Lucas",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "id": "3d825f60-9fff-4dfe-b294-1a45fa1e115d",
+      "imdb_rating": 8.6,
+      "title": "Star Wars: Episode IV - A New Hope",
+      "writers": [
+        {
+          "id": "a5a8f573-3cee-4ccc-8a2b-91cb9f55250a",
+          "name": "George Lucas"
+        }
+      ],
+      "writers_names": [
+        "George Lucas"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "8026ef16-24cf-43a3-be5b-20609a5265ba",
+          "name": "Vanessa Marshall"
+        },
+        {
+          "id": "a1e38083-d780-464b-8631-cbf5053f7a90",
+          "name": "Mark Klastorin"
+        },
+        {
+          "id": "c23936f1-2695-4c16-bbdc-45211ef2a4a7",
+          "name": "Jeff Bennett"
+        },
+        {
+          "id": "efdd1787-8871-4aa9-b1d7-f68e55b913ed",
+          "name": "Billy Dee Williams"
+        }
+      ],
+      "actors_names": [
+        "Vanessa Marshall",
+        "Mark Klastorin",
+        "Jeff Bennett",
+        "Billy Dee Williams"
+      ],
+      "description": "You guide mercenary Kyle Katarn, who must stop the evil plot of a renegade Jedi by relearning his skills as a Jedi Knight.",
+      "director": "",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "id": "7dc44185-c268-476d-8b0e-488a091c1d4b",
+      "imdb_rating": 8.6,
+      "title": "Star Wars: Jedi Knight II - Jedi Outcast",
+      "writers": [
+        {
+          "id": "b87a8335-6df1-4517-b5cc-01f26d1149c3",
+          "name": "Eric Biessman"
+        },
+        {
+          "id": "bcb650f9-90a7-4bb8-bd3d-488e8679fd4e",
+          "name": "Michael Stemmle"
+        }
+      ],
+      "writers_names": [
+        "Eric Biessman",
+        "Michael Stemmle"
+      ]
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "page_number": 5,
+    "page_size": 6
+  }
+}

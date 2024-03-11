@@ -1,0 +1,922 @@
+{
+  "endpoint": "/api/v1/films",
+  "expected_response": [
+    {
+      "actors": [
+        {
+          "id": "00395304-dd52-4c7b-be0d-c2cd7a495684",
+          "name": "Jennifer Hale"
+        },
+        {
+          "id": "2802ff93-f147-49cc-a38b-2f787bd2b875",
+          "name": "John Cygan"
+        },
+        {
+          "id": "578593ee-3268-4cd4-b910-8a44cfd05b73",
+          "name": "Rafael Ferrer"
+        },
+        {
+          "id": "bccbbbb6-be40-44f5-a025-204bcfcf2667",
+          "name": "Raphael Sbarge"
+        }
+      ],
+      "actors_names": [
+        "Jennifer Hale",
+        "John Cygan",
+        "Rafael Ferrer",
+        "Raphael Sbarge"
+      ],
+      "description": "Four thousand years before the fall of the Republic, before the fall of the Jedi, a great war was fought, between the armies of the Sith and the forces of the Republic. A warrior is chosen to rescue a Jedi with a power important to the cause of the Republic, but in the end, will the warrior fight for the Light Side of the Force, or succumb to the Darkness?",
+      "director": "Casey Hudson",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "id": "2a090dde-f688-46fe-a9f4-b781a985275e",
+      "imdb_rating": 9.6,
+      "title": "Star Wars: Knights of the Old Republic",
+      "writers": [
+        {
+          "id": "1bc82e3e-d9ea-4da0-a5ea-69ba20b94373",
+          "name": "Lukas Kristjanson"
+        },
+        {
+          "id": "1e8d746d-72d2-4da2-ad20-651154cfb158",
+          "name": "Michael Gallo"
+        },
+        {
+          "id": "61bffbdc-910e-47b9-8b04-43b5f27807b4",
+          "name": "James Ohlen"
+        },
+        {
+          "id": "63a787ba-dd3f-4176-a894-9970b5c43a12",
+          "name": "Drew Karpyshyn"
+        },
+        {
+          "id": "8778550c-90c6-4180-a6ac-eba956f0ce59",
+          "name": "David Gaider"
+        },
+        {
+          "id": "91c4ca66-e3e1-4932-8447-aadd67fd67b1",
+          "name": "Peter Thomas"
+        },
+        {
+          "id": "b29e255d-644d-4e16-9018-c1bcb49934e5",
+          "name": "Lynn Taylor"
+        },
+        {
+          "id": "f7337af0-21aa-445f-aecf-4794c0faa811",
+          "name": "Brett Rector"
+        }
+      ],
+      "writers_names": [
+        "Lukas Kristjanson",
+        "Michael Gallo",
+        "James Ohlen",
+        "Drew Karpyshyn",
+        "David Gaider",
+        "Peter Thomas",
+        "Lynn Taylor",
+        "Brett Rector"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "3683c176-c96e-4850-ba76-3e3a0290bf3f",
+          "name": "Dan Brown"
+        },
+        {
+          "id": "b48dc19f-2dff-45bf-b7c8-b4d5fcca83ff",
+          "name": "Richard Cetrone"
+        }
+      ],
+      "actors_names": [
+        "Dan Brown",
+        "Richard Cetrone"
+      ],
+      "description": "\"Scene 38 ReImagined\" is about the final confrontation between Ben Kenobi and Darth Vader in \"A New Hope\" nearly 20 years after the events of \"Revenge Of The Sith.\" This is a one-off story ...",
+      "director": "Philip J Silvera",
+      "genre": [
+        "Sci-Fi",
+        "Short"
+      ],
+      "id": "c241874f-53d3-411a-8894-37c19d8bf010",
+      "imdb_rating": 9.5,
+      "title": "Star Wars SC 38 Reimagined",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "901595ba-4278-4224-b04c-974c28428a08",
+          "name": "Shane Dawson"
+        },
+        {
+          "id": "99a9ef8f-c45d-44b3-ab09-e39685e011f5",
+          "name": "Jeffree Star"
+        }
+      ],
+      "actors_names": [
+        "Shane Dawson",
+        "Jeffree Star"
+      ],
+      "description": "Shane Dawson interviews and spends a day with one of the most interesting and controversial people on the internet, Jeffrey Star, in a five part series.",
+      "director": "",
+      "genre": [
+        "Documentary"
+      ],
+      "id": "05d7341e-e367-4e2e-acf5-4652a8435f93",
+      "imdb_rating": 9.5,
+      "title": "The Secret World of Jeffree Star",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "14b21c3c-332c-4f12-aa5d-ec5d45f427c3",
+          "name": "Bora Nenic"
+        },
+        {
+          "id": "955fdcc9-c1c0-4843-ab2c-f467ba1c5eb7",
+          "name": "Milanka Finc"
+        },
+        {
+          "id": "b1655c73-5ff3-4c21-af3b-f552346579c0",
+          "name": "Babus Jasarovski"
+        },
+        {
+          "id": "b5a20d36-7761-433c-af6d-8635a710d7ed",
+          "name": "Nesim Hrvanovic"
+        }
+      ],
+      "actors_names": [
+        "Bora Nenic",
+        "Milanka Finc",
+        "Babus Jasarovski",
+        "Nesim Hrvanovic"
+      ],
+      "description": null,
+      "director": "Rene Nuijens",
+      "genre": [
+        "Comedy",
+        "Short"
+      ],
+      "id": "c49c1df9-6d06-47b7-87db-d96190901fa4",
+      "imdb_rating": 9.4,
+      "title": "Ringo Rocket Star and His Song for Yuri Gagarin",
+      "writers": [
+        {
+          "id": "0695b905-3201-42d6-afee-f47929a928ef",
+          "name": "Steve Korver"
+        },
+        {
+          "id": "73cfd4e4-bf14-4818-8d18-d61346d7eb75",
+          "name": "Rene Nuijens"
+        }
+      ],
+      "writers_names": [
+        "Steve Korver",
+        "Rene Nuijens"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "45613336-d8f2-48f5-8b3d-110076bf9718",
+          "name": "Sammy Cahn"
+        },
+        {
+          "id": "53a92c52-f4e6-4fc7-ba2a-94b48024e1fc",
+          "name": "Carol Burnett"
+        },
+        {
+          "id": "76310c42-d35c-4408-ae1a-4c2c935f4dcf",
+          "name": "Tim Conway"
+        },
+        {
+          "id": "e22f0a9a-cd7c-4937-a44c-648b4a12f193",
+          "name": "Lucille Ball"
+        }
+      ],
+      "actors_names": [
+        "Sammy Cahn",
+        "Carol Burnett",
+        "Tim Conway",
+        "Lucille Ball"
+      ],
+      "description": null,
+      "director": "Dick McDonough",
+      "genre": [
+        "Comedy",
+        "Music"
+      ],
+      "id": "0d5e1522-cc03-454b-b501-085348206b81",
+      "imdb_rating": 9.2,
+      "title": "All-Star Party for Carol Burnett",
+      "writers": [
+        {
+          "id": "c17de384-8c55-46d8-b993-ee24e239d28e",
+          "name": "Paul Keyes"
+        }
+      ],
+      "writers_names": [
+        "Paul Keyes"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "8b223e9f-4782-489c-a277-80375aafdced",
+          "name": "Ashley Parker Angel"
+        },
+        {
+          "id": "8fc70fc7-e7bf-42f7-86f5-4ab42398f77f",
+          "name": "Nancy Davis"
+        },
+        {
+          "id": "da58d5a9-d644-4b7d-9fb3-4b05cac13752",
+          "name": "Rhonda Gibson"
+        },
+        {
+          "id": "ea34a289-4167-4a9d-99f1-a2ced837fa16",
+          "name": "Jackie Powers"
+        }
+      ],
+      "actors_names": [
+        "Ashley Parker Angel",
+        "Nancy Davis",
+        "Rhonda Gibson",
+        "Jackie Powers"
+      ],
+      "description": "From the village of Burg, a teenager named Alex sets out to become the fabled guardian of the goddess Althena...the Dragonmaster. Along with his girlfriend Luna, and several friends they meet along the journey, they soon discover that the happy world of Lunar is on the verge of Armageddon. As Dragonmaster, Alex could save it. As a ruthless and powerful sorceror is about to play his hand, will Alex and company succeed in their quest before all is lost? And is his girlfriend Luna involved in these world shattering events? Play along and find out.",
+      "director": "Victor Ireland",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "id": "2e5561a2-bb7f-48d3-8249-fb668db6014a",
+      "imdb_rating": 9.2,
+      "title": "Lunar: The Silver Star",
+      "writers": [
+        {
+          "id": "1f95b24c-c2e1-4fde-9c84-66e769b1a112",
+          "name": "Victor Ireland"
+        },
+        {
+          "id": "2904977a-de83-4322-9d73-53e9ac0fb119",
+          "name": "Takashi Hino"
+        },
+        {
+          "id": "6c2203bd-5048-4481-a0c3-dee30a854496",
+          "name": "Kei Shigema"
+        },
+        {
+          "id": "a112b814-4756-4ec2-bb4c-a97743ee197f",
+          "name": "Toshiyuki Kubooka"
+        },
+        {
+          "id": "f502ccaa-3188-4401-9c53-6270f1688a5c",
+          "name": "Toshio Akashi"
+        }
+      ],
+      "writers_names": [
+        "Victor Ireland",
+        "Takashi Hino",
+        "Kei Shigema",
+        "Toshiyuki Kubooka",
+        "Toshio Akashi"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "53b8e6b4-c5a1-4ce4-bc38-23dd4c235525",
+          "name": "Diahann Carroll"
+        },
+        {
+          "id": "68fe5e53-0fa8-4d28-9602-43b9dc8b0a54",
+          "name": "Harvey Korman"
+        },
+        {
+          "id": "7a7f4830-9728-4882-a4a9-b0df1a3dc872",
+          "name": "Art Carney"
+        },
+        {
+          "id": "d1e82618-5b12-4fbb-b952-9a883c1d051b",
+          "name": "Bill Corbett"
+        }
+      ],
+      "actors_names": [
+        "Diahann Carroll",
+        "Harvey Korman",
+        "Art Carney",
+        "Bill Corbett"
+      ],
+      "description": "Mike Nelson, Kevin Murphy, and Bill Corbett are here to try to make sense of the alarming characters and nightmarish performances that make up 'The Star Wars Holiday Special' from 1978.",
+      "director": "Steve Binder",
+      "genre": [
+        "Comedy"
+      ],
+      "id": "8629bada-6df6-417c-b7bb-2e5a604be798",
+      "imdb_rating": 9.2,
+      "title": "Rifftrax: The Star Wars Holiday Special",
+      "writers": [
+        {
+          "id": "10136fb4-e296-4bdd-bc02-af3abd90a0e9",
+          "name": "Sean Thomason"
+        },
+        {
+          "id": "63f5affd-7158-437d-9f91-06b43f211fe6",
+          "name": "Michael J. Nelson"
+        },
+        {
+          "id": "e7a65584-4c4d-445f-87c9-912232a6a592",
+          "name": "Conor Lastowka"
+        }
+      ],
+      "writers_names": [
+        "Sean Thomason",
+        "Michael J. Nelson",
+        "Conor Lastowka"
+      ]
+    },
+    {
+      "actors": [],
+      "actors_names": [],
+      "description": null,
+      "director": "Masahiro Sakurai",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Family"
+      ],
+      "id": "c71db79a-6978-46da-9b89-43a92ebfceac",
+      "imdb_rating": 9.2,
+      "title": "Kirby Super Star",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "18437343-e643-4da9-9722-5076e5a0c327",
+          "name": "Roy Blumenfeld"
+        },
+        {
+          "id": "3309420c-30ff-421b-affa-ac1c6b0284a6",
+          "name": "Richard Antaki"
+        },
+        {
+          "id": "7aa9b42c-f150-45bd-8b1c-d3967b4e4f5a",
+          "name": "Alex Bennett"
+        },
+        {
+          "id": "a7103744-b8d8-4b99-8f03-d086d8e32e27",
+          "name": "Rick Betz"
+        }
+      ],
+      "actors_names": [
+        "Roy Blumenfeld",
+        "Richard Antaki",
+        "Alex Bennett",
+        "Rick Betz"
+      ],
+      "description": null,
+      "director": "",
+      "genre": [
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "id": "3e5351d6-4e4a-486b-8529-977672177a07",
+      "imdb_rating": 9.1,
+      "title": "Star Control 2",
+      "writers": [
+        {
+          "id": "01b7b474-a207-4264-81b7-2a612ff7f2d2",
+          "name": "Mat Genser"
+        },
+        {
+          "id": "13f03554-78b0-4e1a-b16a-073c1502851e",
+          "name": "Paul Reiche III"
+        },
+        {
+          "id": "83a7e582-2162-4d07-9c1d-096bbea7d20a",
+          "name": "Tomi Quintana"
+        },
+        {
+          "id": "91fbb296-fcc3-43fe-921d-6d016d08c9d0",
+          "name": "Fred Ford"
+        },
+        {
+          "id": "94ae654b-0d4c-4acc-aed8-3c770f23850b",
+          "name": "John D. Estes"
+        },
+        {
+          "id": "a49768f6-88a0-439d-9b89-f518de5fad50",
+          "name": "Greg Johnson"
+        },
+        {
+          "id": "a57ccbde-86b8-47e5-b506-c5a3c59f67bb",
+          "name": "Erol Otus"
+        },
+        {
+          "id": "ca0e58f1-0123-46d4-bebe-8b24f857aaed",
+          "name": "Leonard Robel"
+        },
+        {
+          "id": "cd7403bf-2fff-42b7-ae95-4812b662eef8",
+          "name": "Iain McCaig"
+        },
+        {
+          "id": "ea97cf10-a82d-4031-ba62-46ae497112eb",
+          "name": "Robert Leyland"
+        }
+      ],
+      "writers_names": [
+        "Mat Genser",
+        "Paul Reiche III",
+        "Tomi Quintana",
+        "Fred Ford",
+        "John D. Estes",
+        "Greg Johnson",
+        "Erol Otus",
+        "Leonard Robel",
+        "Iain McCaig",
+        "Robert Leyland"
+      ]
+    },
+    {
+      "actors": [],
+      "actors_names": [],
+      "description": "Deep in the recesses of YouTube there is an ingenious artist who cannot be stopped. Despite having almost no audience, he consistently churns out 3-4 original feature-length films a year. He's made action movies, horror movies, westerns and more. He's not rich, he has no crew, no formal training and aside from his action figures, plays virtually every part. Welcome to the inspiring, imaginative, and often handmade world of Ultra-DIY filmmaker Richard 'R.G.' Miller, a 50 year-old man who creates impossible blockbusters from his tiny studio apartment in Wichita, Kansas.",
+      "director": "Justin Johnson",
+      "genre": [
+        "Biography",
+        "Comedy",
+        "Documentary"
+      ],
+      "id": "833b1926-ef16-49a1-b41d-eddd618a036e",
+      "imdb_rating": 9.1,
+      "title": "Double Digits: The Story of a Neighborhood Movie Star",
+      "writers": [
+        {
+          "id": "a4b86c52-ba82-4959-a046-e207aed178cf",
+          "name": "Justin Johnson"
+        }
+      ],
+      "writers_names": [
+        "Justin Johnson"
+      ]
+    },
+    {
+      "actors": [],
+      "actors_names": [],
+      "description": null,
+      "director": "Tohru Yoshida",
+      "genre": [
+        "Fantasy"
+      ],
+      "id": "7f28af8a-c629-4af0-b87b-39368a5b8464",
+      "imdb_rating": 9.0,
+      "title": "Phantasy Star IV: The End of the Millennium",
+      "writers": [
+        {
+          "id": "6aeb7a8b-4175-42ea-a43c-a4f5a829a049",
+          "name": "Tohru Yoshida"
+        },
+        {
+          "id": "82b37126-e13d-4200-bad9-9d32a19d9eda",
+          "name": "Akinori Nishiyama"
+        }
+      ],
+      "writers_names": [
+        "Tohru Yoshida",
+        "Akinori Nishiyama"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "1db6d260-e8dd-46e9-b610-6609dcf04231",
+          "name": "Jason Dolley"
+        },
+        {
+          "id": "7ae6bfd2-3fab-4b8a-9e08-f2c901bf1869",
+          "name": "Lisa Arch"
+        },
+        {
+          "id": "99cb58d0-4b03-46ce-b581-d9d9887a97c2",
+          "name": "Lori Alan"
+        },
+        {
+          "id": "9cefe2b3-cf3c-4c3f-be22-554604cd6146",
+          "name": "John D'Aquino"
+        }
+      ],
+      "actors_names": [
+        "Jason Dolley",
+        "Lisa Arch",
+        "Lori Alan",
+        "John D'Aquino"
+      ],
+      "description": null,
+      "director": "",
+      "genre": [
+        "Family",
+        "Musical"
+      ],
+      "id": "a88cbbeb-b998-4ca6-aeff-501463dcdaa0",
+      "imdb_rating": 9.0,
+      "title": "Cory in the House: All Star Edition",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "2e07a545-9631-401e-9b8c-23c0fc813484",
+          "name": "Kelly Hu"
+        },
+        {
+          "id": "3f9f23af-f481-42d3-8127-b624c6299655",
+          "name": "Sara Kestelman"
+        },
+        {
+          "id": "651a0557-fcfc-4d54-a07c-cf7d7e9aa50a",
+          "name": "Nicky Katt"
+        },
+        {
+          "id": "93561f81-95f6-4ce2-9968-92ce6af9f1b0",
+          "name": "Roger Guenveur Smith"
+        }
+      ],
+      "actors_names": [
+        "Kelly Hu",
+        "Sara Kestelman",
+        "Nicky Katt",
+        "Roger Guenveur Smith"
+      ],
+      "description": "Five years after the defeat of Darth Malak, the Sith Lords have nearly destroyed the Jedi Order. An exiled Jedi has returned only to find the galaxy in shambles, and must decide whether to follow the path of the Dark Side and participate in the destruction of the Jedi Order or the Light Side and restore the Jedis to glory.",
+      "director": "",
+      "genre": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "id": "40f515ab-e69e-481c-aac3-ebf3b3833253",
+      "imdb_rating": 8.9,
+      "title": "Star Wars: Knights of the Old Republic II - The Sith Lords",
+      "writers": [
+        {
+          "id": "68778cc3-f95f-49de-8be2-283cc79933ce",
+          "name": "Ferret Baudoin"
+        },
+        {
+          "id": "d4099323-4b76-45e6-8b13-9cb5aeee5eb9",
+          "name": "Chris Avellone"
+        }
+      ],
+      "writers_names": [
+        "Ferret Baudoin",
+        "Chris Avellone"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "df53aa0c-2eb3-46dc-bfa9-797d99ec5769",
+          "name": "Chris Payne Gilbert"
+        },
+        {
+          "id": "eee51a8d-1471-44cb-bc18-1ea4ee3bf00c",
+          "name": "Lauren Thielen"
+        }
+      ],
+      "actors_names": [
+        "Chris Payne Gilbert",
+        "Lauren Thielen"
+      ],
+      "description": "Dr. Lauren Thielen (Dr. T) is back home in Texas to open her very own exotic animal practice, located alongside one of the state's largest and busiest animal hospitals. With the support of ...",
+      "director": "",
+      "genre": [
+        "Reality-TV"
+      ],
+      "id": "ee1baa06-a221-4d8c-8678-992e8e84c5c1",
+      "imdb_rating": 8.9,
+      "title": "Dr. T, Lone Star Vet",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "901f725a-bb8e-44cb-bf85-8b84797bcd85",
+          "name": "Cameron Monaghan"
+        },
+        {
+          "id": "a3468637-c3c3-442c-892e-1625385c49c6",
+          "name": "Dee Bradley Baker"
+        },
+        {
+          "id": "a9746a65-2b68-42e2-a81f-05bea67ea38e",
+          "name": "Debra Wilson"
+        },
+        {
+          "id": "fbe83382-90a6-438e-9f64-e97f19928b6e",
+          "name": "Daniel Roebuck"
+        }
+      ],
+      "actors_names": [
+        "Cameron Monaghan",
+        "Dee Bradley Baker",
+        "Debra Wilson",
+        "Daniel Roebuck"
+      ],
+      "description": "Set shortly after Revenge of the Sith, the player takes on the role of a Jedi padawan being hunted by the Empire after Order 66.",
+      "director": "Stig Asmussen",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "id": "e5a21648-59b1-4672-ac3b-867bcd64b6ea",
+      "imdb_rating": 8.8,
+      "title": "Star Wars Jedi: Fallen Order",
+      "writers": [
+        {
+          "id": "201fb49e-dbe2-410b-b2fe-e066aaceaac3",
+          "name": "Stig Asmussen"
+        },
+        {
+          "id": "37bc9a35-5a01-4cf8-b793-e987cbf8a47a",
+          "name": "Megan Fausti"
+        },
+        {
+          "id": "4205f652-6393-493e-91da-67d186d42102",
+          "name": "Todd Piperi"
+        },
+        {
+          "id": "4e302ca2-b3e0-4ca6-b70d-b2228ca28188",
+          "name": "Cheyenne Paulani Morrin"
+        },
+        {
+          "id": "740fced0-4362-4ba1-a500-a37daabb3778",
+          "name": "Manny Hagopian"
+        },
+        {
+          "id": "80310518-46c8-4e37-ba0b-2ceda6f59777",
+          "name": "Adnan Chatriwala"
+        },
+        {
+          "id": "8b3730b3-0bb6-440a-84c5-f74da82f02c2",
+          "name": "Jessica Hara Campbell"
+        },
+        {
+          "id": "8c022f6c-6dd0-4e32-95cc-e713f21827d4",
+          "name": "Matt Michnovetz"
+        },
+        {
+          "id": "8e6dcc77-1d4a-46cb-8ce8-0ca1e7735153",
+          "name": "Sabine Rosgren"
+        },
+        {
+          "id": "a5a8f573-3cee-4ccc-8a2b-91cb9f55250a",
+          "name": "George Lucas"
+        },
+        {
+          "id": "cbdb2ba5-39c9-4093-b2bd-95f4e62bdb6d",
+          "name": "Aaron Contreras"
+        },
+        {
+          "id": "d4099323-4b76-45e6-8b13-9cb5aeee5eb9",
+          "name": "Chris Avellone"
+        },
+        {
+          "id": "fdbd5259-ee9d-4dc8-a837-e650cde1a047",
+          "name": "Clayton Hogston"
+        }
+      ],
+      "writers_names": [
+        "Stig Asmussen",
+        "Megan Fausti",
+        "Todd Piperi",
+        "Cheyenne Paulani Morrin",
+        "Manny Hagopian",
+        "Adnan Chatriwala",
+        "Jessica Hara Campbell",
+        "Matt Michnovetz",
+        "Sabine Rosgren",
+        "George Lucas",
+        "Aaron Contreras",
+        "Chris Avellone",
+        "Clayton Hogston"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "087de4c7-8d61-4337-beae-d5ce3c440b00",
+          "name": "Nick Jameson"
+        },
+        {
+          "id": "75df679e-81aa-4572-b5f0-2459dfebd9b8",
+          "name": "Guy Siner"
+        },
+        {
+          "id": "b58f3bdb-d734-4c8d-9e3c-6c5a25cc4edf",
+          "name": "Scott Lawrence"
+        },
+        {
+          "id": "c13188fa-a9f1-4156-86d2-1f4bb48dad80",
+          "name": "Denny Delk"
+        }
+      ],
+      "actors_names": [
+        "Nick Jameson",
+        "Guy Siner",
+        "Scott Lawrence",
+        "Denny Delk"
+      ],
+      "description": "You play an up and coming combat pilot serving the Galactic Empire.",
+      "director": "",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "id": "4ab2508c-7d24-460a-87b5-ff9f200e7240",
+      "imdb_rating": 8.8,
+      "title": "Star Wars: TIE Fighter",
+      "writers": [
+        {
+          "id": "22d99e10-65cd-4c22-84b9-1ab8217ed0f4",
+          "name": "Wayne Cline"
+        },
+        {
+          "id": "e03e9083-891b-48c4-b075-4b39c45979ac",
+          "name": "David Wessman"
+        }
+      ],
+      "writers_names": [
+        "Wayne Cline",
+        "David Wessman"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "139f2181-cdf6-48ec-a962-338553ed2d00",
+          "name": "Erik Bergmann"
+        },
+        {
+          "id": "3914db57-a232-4ec0-8abe-ff18848bb336",
+          "name": "David Babich"
+        },
+        {
+          "id": "83efed03-4c53-49d9-bbec-cba04126a289",
+          "name": "Michael G. Davis"
+        },
+        {
+          "id": "8da4bcdf-60e7-40f6-bfe4-0917b0d98002",
+          "name": "Jimmy Freeman"
+        }
+      ],
+      "actors_names": [
+        "Erik Bergmann",
+        "David Babich",
+        "Michael G. Davis",
+        "Jimmy Freeman"
+      ],
+      "description": null,
+      "director": "Joe Asanuma",
+      "genre": [
+        "Adventure",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "id": "ce5f678a-0ba5-44be-840a-0c362236ce4b",
+      "imdb_rating": 8.8,
+      "title": "Star Ocean: The Second Story",
+      "writers": [
+        {
+          "id": "d0d8c214-c043-4757-8621-a307e1b7491d",
+          "name": "Yoshiharu Gotanda"
+        }
+      ],
+      "writers_names": [
+        "Yoshiharu Gotanda"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "27601239-80ae-4f84-b9b1-41a823fcb17e",
+          "name": "David Boat"
+        },
+        {
+          "id": "a44906b1-3994-492a-9dbc-3d11d3a7a273",
+          "name": "Bob Bergen"
+        },
+        {
+          "id": "dbedbfbc-67c9-4637-a215-9cc861f3dd0b",
+          "name": "Corey Burton"
+        },
+        {
+          "id": "f9fc0863-76af-43c1-b895-ee8868726760",
+          "name": "Christina Rumbley"
+        }
+      ],
+      "actors_names": [
+        "David Boat",
+        "Bob Bergen",
+        "Corey Burton",
+        "Christina Rumbley"
+      ],
+      "description": "You play as a member of the Clone 501st Legion, the most elite clone trooper attack group, also known as Vader's Fist, and led by Anakin Skywalker/Darth Vader, over the course of the start, the middle, and the end of the Clone Wars, Operation Knightfall, and the key battles of the Galactic Civil War.",
+      "director": "Eric 'Giz' Gewirtz",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "id": "f061235e-779f-4a59-9eaa-fc533c3c0584",
+      "imdb_rating": 8.8,
+      "title": "Star Wars: Battlefront II",
+      "writers": [
+        {
+          "id": "dcf0da5f-aec9-4643-a6b0-b2447f1c4b49",
+          "name": "Matthew Keast"
+        }
+      ],
+      "writers_names": [
+        "Matthew Keast"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "02225011-c43e-45c1-bac1-ea34307b377e",
+          "name": "Thomas Morley"
+        },
+        {
+          "id": "61a42440-4197-4566-926d-9b05ebe61f44",
+          "name": "Chris Pratt"
+        },
+        {
+          "id": "d0ce62b0-c102-4d00-9728-c84c6625a69b",
+          "name": "Sean Thompson"
+        },
+        {
+          "id": "eed4a0b3-be4a-4c1f-a8be-12e97fd0b8f4",
+          "name": "Michael Bender"
+        }
+      ],
+      "actors_names": [
+        "Thomas Morley",
+        "Chris Pratt",
+        "Sean Thompson",
+        "Michael Bender"
+      ],
+      "description": "A TV movie based on Kinect Star Wars.",
+      "director": "Sean Andrew Faden",
+      "genre": [
+        "Sci-Fi"
+      ],
+      "id": "53d660a1-be2b-4b53-9761-0a315a693789",
+      "imdb_rating": 8.8,
+      "title": "Kinect Star Wars: Duel",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "099a5001-992b-47eb-951a-7b9b73edb3cf",
+          "name": "Dragan Petric"
+        }
+      ],
+      "actors_names": [
+        "Dragan Petric"
+      ],
+      "description": "Star Tech is weekly TV talk show featuring most interesting geeks, techies, bloggers, startup founders, CEOs and others who thrive on the business of new technologies. Show is hosted by the leading regional tech editor, Dragan Petric.",
+      "director": "",
+      "genre": [
+        "Sci-Fi",
+        "Talk-Show"
+      ],
+      "id": "b16d59f7-a386-467b-bea3-35e7ffbba902",
+      "imdb_rating": 8.8,
+      "title": "Star Tech",
+      "writers": [],
+      "writers_names": []
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET"
+}

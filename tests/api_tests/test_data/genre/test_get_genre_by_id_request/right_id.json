@@ -1,0 +1,10 @@
+{
+  "endpoint": "/api/v1/genres/3d8d9bf5-0d90-4353-88ba-4ccc5d2c07ff",
+  "expected_response": {
+    "description": null,
+    "id": "3d8d9bf5-0d90-4353-88ba-4ccc5d2c07ff",
+    "name": "Action"
+  },
+  "expected_status": 200,
+  "method": "GET"
+}

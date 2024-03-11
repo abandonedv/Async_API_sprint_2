@@ -1,0 +1,7 @@
+{
+  "endpoint": "/api/v1/films/wrong_id",
+  "expected_detail": "Film with id = 'wrong_id' not found",
+  "expected_response": null,
+  "expected_status": 404,
+  "method": "GET"
+}

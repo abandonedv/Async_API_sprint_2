@@ -1,0 +1,209 @@
+{
+  "endpoint": "/api/v1/films/search/",
+  "expected_response": [
+    {
+      "actors": [
+        {
+          "id": "4f9d60e0-f06c-470a-afc7-edb2daa30a09",
+          "name": "Mark Calaway"
+        },
+        {
+          "id": "70de3b14-aeaa-4a79-abbb-e99bfd83b776",
+          "name": "Ric Flair"
+        },
+        {
+          "id": "84c6fdb8-d636-417f-8ccd-6aa1f78bd30e",
+          "name": "Adam Birch"
+        },
+        {
+          "id": "8f1a9c3f-ed03-45e7-82ff-5e9966039d4e",
+          "name": "John Hennigan"
+        }
+      ],
+      "actors_names": [
+        "Mark Calaway",
+        "Ric Flair",
+        "Adam Birch",
+        "John Hennigan"
+      ],
+      "description": null,
+      "director": "Kevin Dunn",
+      "genre": [
+        "Action"
+      ],
+      "id": "27b726f2-40e9-4d81-b608-57f7c41bfe54",
+      "imdb_rating": 6.6,
+      "title": "WWE: John Morrison - Rock Star",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "6c9ae6e9-43c3-4d5c-b857-49c26c61ffba",
+          "name": "Chihiro Suzuki"
+        },
+        {
+          "id": "74a4e5ce-5fa7-4f62-aad6-7b529e0cd96e",
+          "name": "Makoto Shinkai"
+        },
+        {
+          "id": "ab890976-8022-464a-ad14-35de35bee244",
+          "name": "Mika Shinohara"
+        },
+        {
+          "id": "f12a07e5-6da5-4c16-8b0f-c42f7b13c52f",
+          "name": "Sumi Mutoh"
+        }
+      ],
+      "actors_names": [
+        "Chihiro Suzuki",
+        "Makoto Shinkai",
+        "Mika Shinohara",
+        "Sumi Mutoh"
+      ],
+      "description": "The story of the high school students Mikako Nagamine and Noboru Terao. When the alien Tarsians attack, Mikako volunteers to be a pilot in the space force that will protect mankind. The lovers try to remain in contact using cellular telephone text messages, but as each battle takes Mikako further from the Earth, each message takes longer to arrive. Will their love stand the tests of time and distance?",
+      "director": "Makoto Shinkai",
+      "genre": [
+        "Animation",
+        "Drama",
+        "Romance",
+        "Sci-Fi",
+        "Short"
+      ],
+      "id": "c20959d2-daca-4cb2-a104-e1ab63479da3",
+      "imdb_rating": 7.2,
+      "title": "Voices of a Distant Star",
+      "writers": [
+        {
+          "id": "74a4e5ce-5fa7-4f62-aad6-7b529e0cd96e",
+          "name": "Makoto Shinkai"
+        }
+      ],
+      "writers_names": [
+        "Makoto Shinkai"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "589a55c7-d9b0-4f3f-862f-4f547f6218e8",
+          "name": "David Mallet"
+        },
+        {
+          "id": "ab77efeb-dc56-4452-bdd9-43d782e223f1",
+          "name": "Robert Elms"
+        }
+      ],
+      "actors_names": [
+        "David Mallet",
+        "Robert Elms"
+      ],
+      "description": "Featuring interviews with iconic bands and artists, such as Guns 'n' Roses, Fleetwood Mac, Metallica, A-Ha, Bon Jovi and Bryan Adams.",
+      "director": "",
+      "genre": [
+        "Documentary",
+        "Music"
+      ],
+      "id": "ac58403b-7070-4dcc-8e53-fa2d2d2284ab",
+      "imdb_rating": 7,
+      "title": "Video Killed the Radio Star",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "03079000-999b-40de-8570-7b921e8f8df2",
+          "name": "Jennifer Braun"
+        },
+        {
+          "id": "a6fde7d2-eed6-4100-8985-165d6eae79b7",
+          "name": "Stefan Raab"
+        },
+        {
+          "id": "b6ca13eb-a78f-481a-8281-006a918a5ec7",
+          "name": "Sabine Heinrich"
+        },
+        {
+          "id": "ed1a2f4f-c0ae-498b-97da-cee2ec4e124a",
+          "name": "Matthias Opdenh\u00f6vel"
+        }
+      ],
+      "actors_names": [
+        "Jennifer Braun",
+        "Stefan Raab",
+        "Sabine Heinrich",
+        "Matthias Opdenh\u00f6vel"
+      ],
+      "description": null,
+      "director": "",
+      "genre": [
+        "Game-Show",
+        "Music"
+      ],
+      "id": "7921b314-6762-4ce9-bb4a-2c1998c1cd3e",
+      "imdb_rating": 7.2,
+      "title": "Unser Star f\u00fcr Oslo",
+      "writers": [],
+      "writers_names": []
+    },
+    {
+      "actors": [
+        {
+          "id": "3dbdf3d2-89ed-42cd-a6de-852592617cbb",
+          "name": "Ilkka Koivula"
+        },
+        {
+          "id": "77677ae0-b19c-43b4-abda-2c490699f851",
+          "name": "Vera Kiiskinen"
+        },
+        {
+          "id": "97a5ebfe-ea94-424d-a3e1-f8d161ea06cf",
+          "name": "Ritva Jalonen"
+        },
+        {
+          "id": "f239fa84-7327-4ff1-bcf8-d585a1fe9b13",
+          "name": "Risto Tuorila"
+        }
+      ],
+      "actors_names": [
+        "Ilkka Koivula",
+        "Vera Kiiskinen",
+        "Ritva Jalonen",
+        "Risto Tuorila"
+      ],
+      "description": "Continues to follow the life of a Finnish family from aftermath of the Finnish Civil War to the Second World War which unites the country. But at what cost?",
+      "director": "Timo Koivusalo",
+      "genre": [
+        "Drama",
+        "War"
+      ],
+      "id": "3c061ba9-49d2-4603-9ab8-d26954e29ef5",
+      "imdb_rating": 6.7,
+      "title": "Under the North Star II",
+      "writers": [
+        {
+          "id": "62bceb24-965c-4c9b-9d9f-fe76f0973f51",
+          "name": "V\u00e4in\u00f6 Linna"
+        },
+        {
+          "id": "9b66d669-5cdd-47ec-ac84-66ae40430350",
+          "name": "Timo Koivusalo"
+        }
+      ],
+      "writers_names": [
+        "V\u00e4in\u00f6 Linna",
+        "Timo Koivusalo"
+      ]
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "page_number": 4,
+    "page_size": 5,
+    "query": "star",
+    "sort": "-title"
+  }
+}

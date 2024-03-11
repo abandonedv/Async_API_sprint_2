@@ -1,0 +1,72 @@
+version: '3.7'
+
+volumes:
+  esdata:
+  db_data:
+  redis_data:
+
+services:
+  nginx:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./configs:/etc/nginx/conf.d:ro
+    depends_on:
+      - app
+    ports:
+      - 80:80
+
+  app:
+    build: app
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - elasticsearch
+      - redis
+
+  etl:
+    image: vadimiki/etl:latest
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - elasticsearch
+      - redis
+
+  elasticsearch:
+    image: elasticsearch:8.6.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms200m -Xmx200m"
+    expose:
+      - 9200
+#    ports:
+#      - ${ELASTIC_PORT}:9200
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  postgres:
+    image: postgis/postgis:14-master
+    shm_size: 1g
+    restart: always
+#    ports:
+#      - ${POSTGRES_PORT}:5432
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+
+  redis:
+    image: redis:alpine
+#    ports:
+#      - ${REDIS_PORT}:6379
+    volumes:
+      - redis_data:/var/lib/redis

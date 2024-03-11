@@ -1,0 +1,184 @@
+{
+  "endpoint": "/api/v1/films",
+  "expected_response": [
+    {
+      "actors": [
+        {
+          "id": "00395304-dd52-4c7b-be0d-c2cd7a495684",
+          "name": "Jennifer Hale"
+        },
+        {
+          "id": "2802ff93-f147-49cc-a38b-2f787bd2b875",
+          "name": "John Cygan"
+        },
+        {
+          "id": "578593ee-3268-4cd4-b910-8a44cfd05b73",
+          "name": "Rafael Ferrer"
+        },
+        {
+          "id": "bccbbbb6-be40-44f5-a025-204bcfcf2667",
+          "name": "Raphael Sbarge"
+        }
+      ],
+      "actors_names": [
+        "Jennifer Hale",
+        "John Cygan",
+        "Rafael Ferrer",
+        "Raphael Sbarge"
+      ],
+      "description": "Four thousand years before the fall of the Republic, before the fall of the Jedi, a great war was fought, between the armies of the Sith and the forces of the Republic. A warrior is chosen to rescue a Jedi with a power important to the cause of the Republic, but in the end, will the warrior fight for the Light Side of the Force, or succumb to the Darkness?",
+      "director": "Casey Hudson",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "id": "2a090dde-f688-46fe-a9f4-b781a985275e",
+      "imdb_rating": 9.6,
+      "title": "Star Wars: Knights of the Old Republic",
+      "writers": [
+        {
+          "id": "1bc82e3e-d9ea-4da0-a5ea-69ba20b94373",
+          "name": "Lukas Kristjanson"
+        },
+        {
+          "id": "1e8d746d-72d2-4da2-ad20-651154cfb158",
+          "name": "Michael Gallo"
+        },
+        {
+          "id": "61bffbdc-910e-47b9-8b04-43b5f27807b4",
+          "name": "James Ohlen"
+        },
+        {
+          "id": "63a787ba-dd3f-4176-a894-9970b5c43a12",
+          "name": "Drew Karpyshyn"
+        },
+        {
+          "id": "8778550c-90c6-4180-a6ac-eba956f0ce59",
+          "name": "David Gaider"
+        },
+        {
+          "id": "91c4ca66-e3e1-4932-8447-aadd67fd67b1",
+          "name": "Peter Thomas"
+        },
+        {
+          "id": "b29e255d-644d-4e16-9018-c1bcb49934e5",
+          "name": "Lynn Taylor"
+        },
+        {
+          "id": "f7337af0-21aa-445f-aecf-4794c0faa811",
+          "name": "Brett Rector"
+        }
+      ],
+      "writers_names": [
+        "Lukas Kristjanson",
+        "Michael Gallo",
+        "James Ohlen",
+        "Drew Karpyshyn",
+        "David Gaider",
+        "Peter Thomas",
+        "Lynn Taylor",
+        "Brett Rector"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "00395304-dd52-4c7b-be0d-c2cd7a495684",
+          "name": "Jennifer Hale"
+        },
+        {
+          "id": "5fcc00db-3be6-4795-b5c6-693cf0b4793c",
+          "name": "Jason Marsden"
+        },
+        {
+          "id": "be2c97e6-219c-43ea-b51c-0eec5e147c54",
+          "name": "Philip Tanzini"
+        },
+        {
+          "id": "c23936f1-2695-4c16-bbdc-45211ef2a4a7",
+          "name": "Jeff Bennett"
+        }
+      ],
+      "actors_names": [
+        "Jennifer Hale",
+        "Jason Marsden",
+        "Philip Tanzini",
+        "Jeff Bennett"
+      ],
+      "description": "You play a young Jedi Academy student who must help stop an evil plot by Dark Jedi to collect and use Dark Side energy for their own ends.",
+      "director": "",
+      "genre": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "id": "c4d36327-b330-4506-a63d-fef69d3f2f8a",
+      "imdb_rating": 8.5,
+      "title": "Star Wars: Jedi Knight - Jedi Academy",
+      "writers": [
+        {
+          "id": "6d76e2c1-0a36-4b68-a221-0c71818b4ce4",
+          "name": "Jon Zuk"
+        },
+        {
+          "id": "a884712f-46b7-4df5-8f38-73ab8789596b",
+          "name": "Kenn Hoekstra"
+        },
+        {
+          "id": "e5fd9c50-0cda-4ed4-98a1-ad3f226efadc",
+          "name": "Michael Chang Gummelt"
+        }
+      ],
+      "writers_names": [
+        "Jon Zuk",
+        "Kenn Hoekstra",
+        "Michael Chang Gummelt"
+      ]
+    },
+    {
+      "actors": [
+        {
+          "id": "00395304-dd52-4c7b-be0d-c2cd7a495684",
+          "name": "Jennifer Hale"
+        },
+        {
+          "id": "35ded0cd-785e-4f61-80f1-08538b34f660",
+          "name": "Nolan North"
+        },
+        {
+          "id": "5237aac5-f652-4aa5-9061-55bb007cd7be",
+          "name": "Tom Kane"
+        },
+        {
+          "id": "d9f1ecbd-98b7-4aa4-a82e-da87cdb12b8e",
+          "name": "Jean Gilpin"
+        }
+      ],
+      "actors_names": [
+        "Jennifer Hale",
+        "Nolan North",
+        "Tom Kane",
+        "Jean Gilpin"
+      ],
+      "description": null,
+      "director": "Ali Donovan",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "id": "32064806-8196-4037-b758-dd5b5d274b59",
+      "imdb_rating": 6.1,
+      "title": "Kinect Star Wars",
+      "writers": [],
+      "writers_names": []
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "actor": "Jennifer Hale",
+    "genre": "Action",
+    "page_size": 5
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "endpoint": "/api/v1/persons",
+  "expected_response": [
+    {
+      "full_name": "Tiago Santos",
+      "id": "1163951e-d74a-41b9-87a6-903eab9b17bc"
+    },
+    {
+      "full_name": "Tia Mowry-Hardrict",
+      "id": "4b8be9a6-bb50-40b7-a7ff-a88d9911dbf5"
+    },
+    {
+      "full_name": "Thorsten Feller",
+      "id": "154e57df-e46a-4695-9620-2a5bb5f2c347"
+    },
+    {
+      "full_name": "Thomas Stroppel",
+      "id": "bfaf8527-fa59-4e83-9368-adabe80c5600"
+    },
+    {
+      "full_name": "Thomas Romain",
+      "id": "70d72b36-3ced-4d48-b084-00a87eea87e6"
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "page_number": 69,
+    "page_size": 5,
+    "sort": "-full_name"
+  }
+}

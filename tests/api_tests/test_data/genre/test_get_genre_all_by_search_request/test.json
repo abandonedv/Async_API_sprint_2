@@ -1,0 +1,16 @@
+{
+  "endpoint": "/api/v1/genres/search/",
+  "expected_response": [
+    {
+      "description": null,
+      "id": "e508c1c8-24c0-4136-80b4-340c4befb190",
+      "name": "Reality-TV"
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "query": "TV",
+    "sort": "name"
+  }
+}

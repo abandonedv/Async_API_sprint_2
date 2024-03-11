@@ -1,0 +1,91 @@
+{
+  "endpoint": "/api/v1/persons/search/",
+  "expected_response": [
+    {
+      "full_name": "Dr. John",
+      "id": "962ba445-e670-4f61-9ab1-5a8a5bb5319d"
+    },
+    {
+      "full_name": "Elton John",
+      "id": "a613fd6e-b935-4f67-bf1b-007f2c844e98"
+    },
+    {
+      "full_name": "John A. Hancock",
+      "id": "5e2bc270-ac76-46cd-8ba8-89e7e71be039"
+    },
+    {
+      "full_name": "John Agar",
+      "id": "771f8445-19ea-4947-8153-3b038674508a"
+    },
+    {
+      "full_name": "John Ainsworth",
+      "id": "bb707407-b6b1-4d53-b432-f497f6add1df"
+    },
+    {
+      "full_name": "John Armstrong",
+      "id": "c72d1244-4ff2-4242-a259-838dbbe66ac1"
+    },
+    {
+      "full_name": "John Au",
+      "id": "45ab2bae-069b-4abc-8ef7-aeae1570a771"
+    },
+    {
+      "full_name": "John Barrowman",
+      "id": "dcd7a871-efc0-4ddb-a073-6fa8932b24f4"
+    },
+    {
+      "full_name": "John Billingsley",
+      "id": "3d6d8482-7a99-44cf-af06-3921e8bd5cca"
+    },
+    {
+      "full_name": "John Booth",
+      "id": "4992ca0b-bb8d-40de-8cfa-96a6c09c54af"
+    },
+    {
+      "full_name": "John Boyega",
+      "id": "1e49c916-e92a-4a27-8748-7d8d9769fe7a"
+    },
+    {
+      "full_name": "John Bradshaw",
+      "id": "efc0d4a5-bcf7-4cfc-ab46-8279387df9cf"
+    },
+    {
+      "full_name": "John Burgmeier",
+      "id": "2a366456-009b-47b7-a068-3a5ecff8c626"
+    },
+    {
+      "full_name": "John Byner",
+      "id": "141e0e32-fee1-4a62-9b7d-ad1949d7838c"
+    },
+    {
+      "full_name": "John C. Higgins",
+      "id": "01ac4731-c027-453a-988a-78ce3a4e7554"
+    },
+    {
+      "full_name": "John Carpenter",
+      "id": "6b02aa9b-87f1-4c38-ad33-8b125bd29781"
+    },
+    {
+      "full_name": "John Cho",
+      "id": "f89a9bad-5bd3-446d-bbdf-e1fd0d217e5d"
+    },
+    {
+      "full_name": "John Cook",
+      "id": "b2826894-a791-4278-bdae-7718b993cecb"
+    },
+    {
+      "full_name": "John Cothran",
+      "id": "d4f66d41-4674-42aa-9e24-bb9f1f7e85ea"
+    },
+    {
+      "full_name": "John Cygan",
+      "id": "2802ff93-f147-49cc-a38b-2f787bd2b875"
+    }
+  ],
+  "expected_status": 200,
+  "method": "GET",
+  "params": {
+    "query": "John",
+    "sort": "full_name"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "endpoint": "/api/v1/persons/a5a8f573-3cee-4ccc-8a2b-91cb9f55250a",
+  "expected_response": {
+    "full_name": "George Lucas",
+    "id": "a5a8f573-3cee-4ccc-8a2b-91cb9f55250a"
+  },
+  "expected_status": 200,
+  "method": "GET"
+}
