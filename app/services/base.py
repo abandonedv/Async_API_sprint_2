@@ -1,10 +1,10 @@
-from app.adapters.database.abstract import NoSQLDatabaseI
+from app.adapters.database.abstract import NoSQLDatabaseI, CacheDatabaseI
 from app.exceptions.entity import EntityNotExistException
 from app.models.base import BaseMixin
 
 
 class BaseService:
-    def __init__(self, cache: NoSQLDatabaseI, db: NoSQLDatabaseI):
+    def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
         self.cache = cache
         self.db = db
         self.index_name = None

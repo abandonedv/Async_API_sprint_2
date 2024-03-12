@@ -1,15 +1,16 @@
 from hashlib import md5
 from logging import getLogger
+from typing import Type
 
 import orjson
 from pydantic import BaseModel
 from redis.asyncio import Redis
 
-from app.adapters.database.abstract import NoSQLDatabaseI
+from app.adapters.database.abstract import CacheDatabaseI
 from app.core.config import RedisParams
 
 
-class RedisClient(NoSQLDatabaseI):
+class RedisClient(CacheDatabaseI):
     def __init__(self):
         self.config = RedisParams()
         self.redis = Redis(**self.config.model_dump())
@@ -17,7 +18,7 @@ class RedisClient(NoSQLDatabaseI):
         self.log = getLogger(self.__class__.__name__)
 
     async def get_by_id(
-        self, _id: str, index: str, model: BaseModel
+        self, _id: str, index: str, model: Type[BaseModel]
     ) -> BaseModel | None:
         data = await self.redis.get(f"{index}:{_id}")
         if not data:
@@ -29,7 +30,7 @@ class RedisClient(NoSQLDatabaseI):
         self,
         params: dict,
         index: str,
-        model: BaseModel,
+        model: Type[BaseModel],
     ) -> list[BaseModel]:
         params = md5(orjson.dumps(params)).hexdigest()
         data = await self.redis.get(f"{index}:{params}")

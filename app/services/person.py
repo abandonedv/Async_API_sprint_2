@@ -4,14 +4,15 @@ from fastapi import Depends
 
 from app.adapters.database.elastic.async_client import ElasticClient
 from app.adapters.database.redis.async_client import RedisClient
+from app.adapters.database.abstract import NoSQLDatabaseI, CacheDatabaseI
 from app.models.person import Person
 from app.services.base import BaseService
 from app.utils.es import get_offset, get_sort_params
 
 
 class PersonService(BaseService):
-    def __init__(self, cache: RedisClient, elastic: ElasticClient):
-        super().__init__(cache, elastic)
+    def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
+        super().__init__(cache, db)
         self.index_name = "persons"
         self.model = Person
 
@@ -147,7 +148,7 @@ class PersonService(BaseService):
 
 @lru_cache()
 def get_person_service(
-    redis: RedisClient = Depends(RedisClient),
-    elastic: ElasticClient = Depends(ElasticClient),
+    redis: CacheDatabaseI = Depends(RedisClient),
+    elastic: NoSQLDatabaseI = Depends(ElasticClient),
 ) -> PersonService:
     return PersonService(redis, elastic)
