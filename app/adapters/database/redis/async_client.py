@@ -1,5 +1,4 @@
 from hashlib import md5
-from logging import getLogger
 from typing import Type
 
 import orjson
@@ -12,10 +11,10 @@ from app.core.config import RedisParams
 
 class RedisClient(CacheDatabaseI):
     def __init__(self):
+        super().__init__()
         self.config = RedisParams()
         self.redis = Redis(**self.config.model_dump())
         self.cache_timeout = 60 * 5  # 5 минут
-        self.log = getLogger(self.__class__.__name__)
 
     async def get_by_id(
         self,

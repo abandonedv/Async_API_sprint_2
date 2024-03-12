@@ -1,5 +1,3 @@
-from logging import getLogger
-
 from elasticsearch import AsyncElasticsearch
 from elasticsearch.exceptions import NotFoundError
 from pydantic import BaseModel
@@ -10,9 +8,9 @@ from app.core.config import ElasticParams
 
 class ElasticClient(NoSQLDatabaseI):
     def __init__(self):
+        super().__init__()
         self.config = ElasticParams()
         self.elastic = AsyncElasticsearch(self.config.url())
-        self.log = getLogger(self.__class__.__name__)
 
     async def get_by_id(self, index: str, _id: str, model: BaseModel) -> dict | None:
         try:

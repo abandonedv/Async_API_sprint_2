@@ -1,10 +1,14 @@
 import abc
+from logging import getLogger
 from typing import Type
 
 from pydantic import BaseModel
 
 
 class NoSQLDatabaseI(abc.ABC):
+    def __init__(self):
+        self.log = getLogger(self.__class__.__name__)
+
     @abc.abstractmethod
     async def get_by_id(
         self,
