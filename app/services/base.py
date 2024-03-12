@@ -1,4 +1,4 @@
-from app.adapters.database.abstract import NoSQLDatabaseI, CacheDatabaseI
+from app.adapters.database.abstract import CacheDatabaseI, NoSQLDatabaseI
 from app.exceptions.entity import EntityNotExistException
 from app.models.base import BaseMixin
 

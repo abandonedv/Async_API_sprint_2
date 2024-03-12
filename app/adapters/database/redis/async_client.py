@@ -18,7 +18,10 @@ class RedisClient(CacheDatabaseI):
         self.log = getLogger(self.__class__.__name__)
 
     async def get_by_id(
-        self, _id: str, index: str, model: Type[BaseModel]
+        self,
+        _id: str,
+        index: str,
+        model: Type[BaseModel],
     ) -> BaseModel | None:
         data = await self.redis.get(f"{index}:{_id}")
         if not data:
