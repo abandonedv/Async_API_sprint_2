@@ -6,11 +6,11 @@ from app.adapters.database.abstract import CacheDatabaseI, NoSQLDatabaseI
 from app.adapters.database.elastic.async_client import ElasticClient
 from app.adapters.database.redis.async_client import RedisClient
 from app.models.genre import Genre
-from app.services.base import BaseServiceI
+from app.services.base import ServiceI
 from app.utils.es import get_offset, get_sort_params
 
 
-class GenreService(BaseServiceI):
+class GenreService(ServiceI):
     def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
         super().__init__(cache, db)
         self.index_name = "genres"

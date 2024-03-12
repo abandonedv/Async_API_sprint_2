@@ -5,14 +5,14 @@ from app.exceptions.entity import EntityNotExistException
 from app.models.base import BaseMixin
 
 
-class BaseServiceI(abc.ABC):
+class ServiceI(abc.ABC):
     def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
         self.cache = cache
         self.db = db
         self.index_name = None
         self.model = BaseMixin
 
-    async def get_by_id(self, _id: str) -> BaseMixin | None:
+    async def get_by_id(self, _id: str) -> BaseMixin:
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
         entity = await self.cache.get_by_id(
             _id=_id,
