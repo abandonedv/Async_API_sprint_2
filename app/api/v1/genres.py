@@ -65,7 +65,7 @@ async def genres_details_by_search(
     ),
     genre_service=Depends(services.get_genre_service),
 ) -> list[models.Genre]:
-    return await genre_service.get_genres_by_search(
+    return await genre_service.get_many_by_search(
         query=query,
         sort=sort,
         page_number=page_number,

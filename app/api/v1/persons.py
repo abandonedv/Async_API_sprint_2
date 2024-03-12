@@ -65,7 +65,7 @@ async def persons_details_by_search(
     ),
     person_service=Depends(services.get_person_service),
 ) -> list[models.Person]:
-    return await person_service.get_persons_by_search(
+    return await person_service.get_many_by_search(
         query=query,
         sort=sort,
         page_number=page_number,

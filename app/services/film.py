@@ -6,11 +6,11 @@ from app.adapters.database.abstract import CacheDatabaseI, NoSQLDatabaseI
 from app.adapters.database.elastic.async_client import ElasticClient
 from app.adapters.database.redis.async_client import RedisClient
 from app.models.film import Film
-from app.services.base import BaseService
+from app.services.base import BaseServiceI
 from app.utils.es import get_offset, get_sort_params
 
 
-class FilmService(BaseService):
+class FilmService(BaseServiceI):
     def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
         super().__init__(cache, db)
         self.index_name = "movies"
@@ -42,7 +42,7 @@ class FilmService(BaseService):
         )
         if not films:
             # Если фильмов нет в кеше, то ищем его в Elasticsearch
-            films = await self._get_films_from_elastic_term(**params)
+            films = await self._get_films_from_db_term(**params)
             if not films:
                 # Если он отсутствует в Elasticsearch, значит, фильма вообще нет в базе
                 return []
@@ -55,7 +55,7 @@ class FilmService(BaseService):
 
         return films
 
-    async def get_films_by_search(
+    async def get_many_by_search(
         self,
         query: str,
         sort: str,
@@ -77,7 +77,7 @@ class FilmService(BaseService):
         )
         if not films:
             # Если фильмов нет в кеше, то ищем его в Elasticsearch
-            films = await self._get_films_from_elastic_match(**params)
+            films = await self._get_many_from_db_match(**params)
             if not films:
                 # Если он отсутствует в Elasticsearch, значит, фильма вообще нет в базе
                 return []
@@ -90,7 +90,7 @@ class FilmService(BaseService):
 
         return films
 
-    async def _get_films_from_elastic_term(
+    async def _get_films_from_db_term(
         self,
         sort: str,
         genre: str | None,
@@ -133,7 +133,7 @@ class FilmService(BaseService):
 
         return [Film(**hit["_source"]) for hit in result["hits"]["hits"]]
 
-    async def _get_films_from_elastic_match(
+    async def _get_many_from_db_match(
         self,
         query: str,
         sort: str,
