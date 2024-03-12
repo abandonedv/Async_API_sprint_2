@@ -1,10 +1,9 @@
 from functools import lru_cache
 
-from elasticsearch import AsyncElasticsearch
 from fastapi import Depends
 from redis.asyncio import Redis
 
-from app.db.elastic import get_elastic
+from app.adapters.database.elastic.async_client import ElasticClient
 from app.db.redis import get_redis
 from app.models.person import Person
 from app.services.base import BaseService
@@ -12,7 +11,7 @@ from app.utils.es import get_offset, get_sort_params
 
 
 class PersonService(BaseService):
-    def __init__(self, redis: Redis, elastic: AsyncElasticsearch):
+    def __init__(self, redis: Redis, elastic: ElasticClient):
         super().__init__(redis, elastic)
         self.index_name = "persons"
         self.model = Person
@@ -140,6 +139,6 @@ class PersonService(BaseService):
 @lru_cache()
 def get_person_service(
     redis: Redis = Depends(get_redis),
-    elastic: AsyncElasticsearch = Depends(get_elastic),
+    elastic: ElasticClient = Depends(ElasticClient),
 ) -> PersonService:
     return PersonService(redis, elastic)
