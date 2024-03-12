@@ -1,18 +1,18 @@
 from functools import lru_cache
 
 from fastapi import Depends
-from redis.asyncio import Redis
 
+from app.adapters.database.abstract import CacheDatabaseI, NoSQLDatabaseI
 from app.adapters.database.elastic.async_client import ElasticClient
-from app.db.redis import get_redis
+from app.adapters.database.redis.async_client import RedisClient
 from app.models.film import Film
 from app.services.base import BaseService
 from app.utils.es import get_offset, get_sort_params
 
 
 class FilmService(BaseService):
-    def __init__(self, redis: Redis, elastic: ElasticClient):
-        super().__init__(redis, elastic)
+    def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
+        super().__init__(cache, db)
         self.index_name = "movies"
         self.model = Film
 
@@ -35,7 +35,11 @@ class FilmService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        films = await self._entities_from_cache(params=params)
+        films = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not films:
             # Если фильмов нет в кеше, то ищем его в Elasticsearch
             films = await self._get_films_from_elastic_term(**params)
@@ -43,9 +47,10 @@ class FilmService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, фильма вообще нет в базе
                 return []
             # Сохраняем фильм  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=films,
                 params=params,
+                index=self.index_name,
             )
 
         return films
@@ -65,7 +70,11 @@ class FilmService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        films = await self._entities_from_cache(params=params)
+        films = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not films:
             # Если фильмов нет в кеше, то ищем его в Elasticsearch
             films = await self._get_films_from_elastic_match(**params)
@@ -73,9 +82,10 @@ class FilmService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, фильма вообще нет в базе
                 return []
             # Сохраняем фильм  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=films,
                 params=params,
+                index=self.index_name,
             )
 
         return films
@@ -116,7 +126,7 @@ class FilmService(BaseService):
                     {"term": {"writers_names.raw": writer}},
                 )
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -150,7 +160,7 @@ class FilmService(BaseService):
             ],
         }
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -160,7 +170,7 @@ class FilmService(BaseService):
 
 @lru_cache()
 def get_film_service(
-    redis: Redis = Depends(get_redis),
-    elastic: ElasticClient = Depends(ElasticClient),
+    redis: CacheDatabaseI = Depends(RedisClient),
+    elastic: NoSQLDatabaseI = Depends(ElasticClient),
 ) -> FilmService:
     return FilmService(redis, elastic)
