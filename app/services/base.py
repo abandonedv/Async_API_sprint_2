@@ -1,16 +1,15 @@
 from hashlib import md5
 
 import orjson
-from elasticsearch import AsyncElasticsearch
-from elasticsearch.exceptions import NotFoundError
 from redis.asyncio import Redis
 
+from app.adapters.database.elastic.async_client import ElasticClient
 from app.exceptions.entity import EntityNotExistException
 from app.models.base import BaseMixin
 
 
 class BaseService:
-    def __init__(self, redis: Redis, elastic: AsyncElasticsearch):
+    def __init__(self, redis: Redis, elastic: ElasticClient):
         self.redis = redis
         self.elastic = elastic
         self.index_name = None
@@ -22,23 +21,18 @@ class BaseService:
         entity = await self._entity_from_cache(_id=_id)
         if not entity:
             # Если записи нет в кеше, то ищем ее в Elasticsearch
-            entity = await self._get_entity_from_elastic(_id)
+            entity = await self.elastic.get_by_id(
+                _id=_id, index=self.index_name, model=self.model
+            )
             if not entity:
                 # Если она отсутствует в Elasticsearch, значит, записи вообще нет в базе
                 raise EntityNotExistException(
-                    detail=f"{self.model.__name__} with id = {_id!r} not found"
+                    detail=f"{self.model.__name__} with id = {_id!r} not found",
                 )
             # Сохраняем запись в кеш
             await self._put_entity_to_cache(entity=entity)
 
         return entity
-
-    async def _get_entity_from_elastic(self, _id: str) -> BaseMixin | None:
-        try:
-            doc = await self.elastic.get(index=self.index_name, id=_id)
-        except NotFoundError:
-            return None
-        return self.model(**doc["_source"])
 
     async def _entity_from_cache(self, _id: str) -> BaseMixin | None:
         data = await self.redis.get(f"{self.index_name}:{_id}")
