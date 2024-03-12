@@ -5,10 +5,10 @@ from elasticsearch.exceptions import NotFoundError
 from pydantic import BaseModel
 
 from app.core.config import ElasticParams
-from app.adapters.database.abstract import NoSQlDatabaseI
+from app.adapters.database.abstract import NoSQLDatabaseI
 
 
-class ElasticClient(NoSQlDatabaseI):
+class ElasticClient(NoSQLDatabaseI):
     def __init__(self):
         self.config = ElasticParams()
         self.elastic = AsyncElasticsearch(self.config.url())

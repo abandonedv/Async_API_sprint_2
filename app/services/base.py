@@ -3,13 +3,13 @@ from hashlib import md5
 import orjson
 from redis.asyncio import Redis
 
-from app.adapters.database.elastic.async_client import ElasticClient
+from app.adapters.database.abstract import NoSQLDatabaseI
 from app.exceptions.entity import EntityNotExistException
 from app.models.base import BaseMixin
 
 
 class BaseService:
-    def __init__(self, redis: Redis, elastic: ElasticClient):
+    def __init__(self, redis: Redis, elastic: NoSQLDatabaseI):
         self.redis = redis
         self.elastic = elastic
         self.index_name = None
