@@ -1,18 +1,17 @@
 from functools import lru_cache
 
 from fastapi import Depends
-from redis.asyncio import Redis
 
 from app.adapters.database.elastic.async_client import ElasticClient
-from app.db.redis import get_redis
+from app.adapters.database.redis.async_client import RedisClient
 from app.models.person import Person
 from app.services.base import BaseService
 from app.utils.es import get_offset, get_sort_params
 
 
 class PersonService(BaseService):
-    def __init__(self, redis: Redis, elastic: ElasticClient):
-        super().__init__(redis, elastic)
+    def __init__(self, cache: RedisClient, elastic: ElasticClient):
+        super().__init__(cache, elastic)
         self.index_name = "persons"
         self.model = Person
 
@@ -29,7 +28,11 @@ class PersonService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        persons = await self._entities_from_cache(params=params)
+        persons = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not persons:
             # Если персон нет в кеше, то ищем его в Elasticsearch
             persons = await self._get_persons_from_elastic(**params)
@@ -37,9 +40,10 @@ class PersonService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, персоны вообще нет в базе
                 return []
             # Сохраняем персону  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=persons,
                 params=params,
+                index=self.index_name,
             )
 
         return persons
@@ -59,7 +63,11 @@ class PersonService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        persons = await self._entities_from_cache(params=params)
+        persons = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not persons:
             # Если персон нет в кеше, то ищем его в Elasticsearch
             persons = await self._get_persons_from_elastic_match(**params)
@@ -67,9 +75,10 @@ class PersonService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, персоны вообще нет в базе
                 return []
             # Сохраняем персону  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=persons,
                 params=params,
+                index=self.index_name,
             )
 
         return persons
@@ -94,7 +103,7 @@ class PersonService(BaseService):
             ],
         }
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -128,7 +137,7 @@ class PersonService(BaseService):
             ],
         }
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -138,7 +147,7 @@ class PersonService(BaseService):
 
 @lru_cache()
 def get_person_service(
-    redis: Redis = Depends(get_redis),
+    redis: RedisClient = Depends(RedisClient),
     elastic: ElasticClient = Depends(ElasticClient),
 ) -> PersonService:
     return PersonService(redis, elastic)

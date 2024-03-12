@@ -4,8 +4,8 @@ from elasticsearch import AsyncElasticsearch
 from elasticsearch.exceptions import NotFoundError
 from pydantic import BaseModel
 
-from app.core.config import ElasticParams
 from app.adapters.database.abstract import NoSQLDatabaseI
+from app.core.config import ElasticParams
 
 
 class ElasticClient(NoSQLDatabaseI):

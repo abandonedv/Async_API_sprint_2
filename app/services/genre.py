@@ -1,18 +1,17 @@
 from functools import lru_cache
 
 from fastapi import Depends
-from redis.asyncio import Redis
 
 from app.adapters.database.elastic.async_client import ElasticClient
-from app.db.redis import get_redis
+from app.adapters.database.redis.async_client import RedisClient
 from app.models.genre import Genre
 from app.services.base import BaseService
 from app.utils.es import get_offset, get_sort_params
 
 
 class GenreService(BaseService):
-    def __init__(self, redis: Redis, elastic: ElasticClient):
-        super().__init__(redis, elastic)
+    def __init__(self, cache: RedisClient, elastic: ElasticClient):
+        super().__init__(cache, elastic)
         self.index_name = "genres"
         self.model = Genre
 
@@ -29,7 +28,11 @@ class GenreService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        genres = await self._entities_from_cache(params=params)
+        genres = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not genres:
             # Если жанров нет в кеше, то ищем его в Elasticsearch
             genres = await self._get_genres_from_elastic(**params)
@@ -37,9 +40,10 @@ class GenreService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, жанра вообще нет в базе
                 return []
             # Сохраняем жанр  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=genres,
                 params=params,
+                index=self.index_name,
             )
 
         return genres
@@ -59,7 +63,11 @@ class GenreService(BaseService):
         )
 
         # Пытаемся получить данные из кеша, потому что оно работает быстрее
-        genres = await self._entities_from_cache(params=params)
+        genres = await self.cache.get_by_params(
+            params=params,
+            index=self.index_name,
+            model=self.model,
+        )
         if not genres:
             # Если жанров нет в кеше, то ищем его в Elasticsearch
             genres = await self._get_genres_from_elastic_match(**params)
@@ -67,9 +75,10 @@ class GenreService(BaseService):
                 # Если он отсутствует в Elasticsearch, значит, жанра вообще нет в базе
                 return []
             # Сохраняем жанр  в кеш
-            await self._put_entities_to_cache(
+            await self.cache.add_many(
                 entities=genres,
                 params=params,
+                index=self.index_name,
             )
 
         return genres
@@ -94,7 +103,7 @@ class GenreService(BaseService):
             ],
         }
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -128,7 +137,7 @@ class GenreService(BaseService):
             ],
         }
 
-        result = await self.elastic.search(
+        result = await self.db.search(
             index=self.index_name,
             body=body,
         )
@@ -138,7 +147,7 @@ class GenreService(BaseService):
 
 @lru_cache()
 def get_genre_service(
-    redis: Redis = Depends(get_redis),
+    redis: RedisClient = Depends(RedisClient),
     elastic: ElasticClient = Depends(ElasticClient),
 ) -> GenreService:
     return GenreService(redis, elastic)
