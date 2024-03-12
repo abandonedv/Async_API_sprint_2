@@ -1,13 +1,12 @@
-from logging import getLogger
 from hashlib import md5
+from logging import getLogger
 
 import orjson
-
-from redis.asyncio import Redis
 from pydantic import BaseModel
+from redis.asyncio import Redis
 
-from app.core.config import RedisParams
 from app.adapters.database.abstract import NoSQLDatabaseI
+from app.core.config import RedisParams
 
 
 class RedisClient(NoSQLDatabaseI):
@@ -17,7 +16,9 @@ class RedisClient(NoSQLDatabaseI):
         self.cache_timeout = 60 * 5  # 5 минут
         self.log = getLogger(self.__class__.__name__)
 
-    async def get_by_id(self, _id: str, index: str, model: BaseModel) -> BaseModel | None:
+    async def get_by_id(
+        self, _id: str, index: str, model: BaseModel
+    ) -> BaseModel | None:
         data = await self.redis.get(f"{index}:{_id}")
         if not data:
             return None
