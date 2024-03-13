@@ -1,0 +1,36 @@
+version: '3.7'
+
+volumes:
+  esdata:
+  redis_data:
+
+services:
+  app:
+    build: app
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - elasticsearch
+      - redis
+
+  elasticsearch:
+    image: elasticsearch:8.6.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms200m -Xmx200m"
+    expose:
+      - 9200
+    ports:
+      - ${ELASTIC_PORT}:9200
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  redis:
+    image: redis:alpine
+    ports:
+      - ${REDIS_PORT}:6379
+    volumes:
+      - redis_data:/var/lib/redis
