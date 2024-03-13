@@ -1,0 +1,51 @@
+version: '3.7'
+
+volumes:
+  esdata:
+  redis_data:
+
+services:
+  app:
+    build: ../../.
+    restart: always
+    env_file:
+      - .env.test
+    depends_on:
+      - elasticsearch
+      - redis
+
+  tests:
+    build: ../../.
+    env_file:
+      - .env.test
+    entrypoint: >
+      sh -c "pip install -r requirements_test.txt
+      && export PYTHONPATH=.
+      && python3 app/tests/functional/utils/wait_for_redis.py
+      && python3 app/tests/functional/utils/wait_for_es.py
+      && pytest app/tests/functional/src"
+    depends_on:
+      - elasticsearch
+      - redis
+    volumes:
+      - ./requirements_test.txt:/home/server/requirements_test.txt
+
+  elasticsearch:
+    image: elasticsearch:8.6.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms200m -Xmx200m"
+    expose:
+      - 9200
+    ports:
+      - 9200:9200
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/var/lib/redis
