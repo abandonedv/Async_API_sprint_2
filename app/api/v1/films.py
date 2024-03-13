@@ -67,7 +67,7 @@ async def films_details_by_search(
     ),
     film_service=Depends(services.film.get_film_service),
 ) -> list[models.Film]:
-    return await film_service.get_films_by_search(
+    return await film_service.get_many_by_search(
         query=query,
         sort=sort,
         page_number=page_number,

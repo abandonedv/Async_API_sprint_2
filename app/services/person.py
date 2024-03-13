@@ -6,11 +6,11 @@ from app.adapters.database.abstract import CacheDatabaseI, NoSQLDatabaseI
 from app.adapters.database.elastic.async_client import ElasticClient
 from app.adapters.database.redis.async_client import RedisClient
 from app.models.person import Person
-from app.services.base import BaseService
+from app.services.base import ServiceI
 from app.utils.es import get_offset, get_sort_params
 
 
-class PersonService(BaseService):
+class PersonService(ServiceI):
     def __init__(self, cache: CacheDatabaseI, db: NoSQLDatabaseI):
         super().__init__(cache, db)
         self.index_name = "persons"
@@ -36,7 +36,7 @@ class PersonService(BaseService):
         )
         if not persons:
             # Если персон нет в кеше, то ищем его в Elasticsearch
-            persons = await self._get_persons_from_elastic(**params)
+            persons = await self._get_persons_from_db(**params)
             if not persons:
                 # Если он отсутствует в Elasticsearch, значит, персоны вообще нет в базе
                 return []
@@ -49,7 +49,7 @@ class PersonService(BaseService):
 
         return persons
 
-    async def get_persons_by_search(
+    async def get_many_by_search(
         self,
         query: str,
         sort: str,
@@ -71,7 +71,7 @@ class PersonService(BaseService):
         )
         if not persons:
             # Если персон нет в кеше, то ищем его в Elasticsearch
-            persons = await self._get_persons_from_elastic_match(**params)
+            persons = await self._get_many_from_db_match(**params)
             if not persons:
                 # Если он отсутствует в Elasticsearch, значит, персоны вообще нет в базе
                 return []
@@ -84,7 +84,7 @@ class PersonService(BaseService):
 
         return persons
 
-    async def _get_persons_from_elastic(
+    async def _get_persons_from_db(
         self,
         sort: str,
         page_number: int,
@@ -111,7 +111,7 @@ class PersonService(BaseService):
 
         return [Person(**hit["_source"]) for hit in result["hits"]["hits"]]
 
-    async def _get_persons_from_elastic_match(
+    async def _get_many_from_db_match(
         self,
         query: str,
         sort: str,
