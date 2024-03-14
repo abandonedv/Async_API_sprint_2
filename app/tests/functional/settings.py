@@ -1,8 +1,10 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+ENV_PATH = "app/tests/functional/.env.test"
+
 
 class ElasticParams(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="ELASTIC_", env_file=".env.test")
+    model_config = SettingsConfigDict(env_prefix="ELASTIC_", env_file=ENV_PATH)
 
     host: str
     port: int
@@ -12,7 +14,7 @@ class ElasticParams(BaseSettings):
 
 
 class RedisParams(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="REDIS_", env_file=".env.test")
+    model_config = SettingsConfigDict(env_prefix="REDIS_", env_file=ENV_PATH)
 
     host: str
     port: int
