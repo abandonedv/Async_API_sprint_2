@@ -1,7 +1,6 @@
-import asyncio
-
 import pytest_asyncio  # noqa
 from elasticsearch import AsyncElasticsearch
+from elasticsearch.helpers import async_bulk
 from redis.asyncio import Redis
 
 from app.tests.functional.settings import ElasticParams, RedisParams
@@ -15,13 +14,6 @@ indexes_mapping = {
     "persons": es_mapping.persons_mapping,
     "genres": es_mapping.genres_mapping,
 }
-
-
-@pytest_asyncio.fixture(scope="session")
-def event_loop():
-    loop = asyncio.get_event_loop()
-    yield loop
-    loop.close()
 
 
 @pytest_asyncio.fixture(scope="function", autouse=True)
@@ -53,3 +45,15 @@ async def es_client():
     es_client = AsyncElasticsearch(es_params.url())
     yield es_client
     await es_client.close()
+
+
+@pytest_asyncio.fixture(name="es_write_data")
+def es_write_data():
+    async def inner(data: list[dict]):
+        updated, errors = await async_bulk(client=es_client, actions=data)
+
+        await es_client.close()
+
+        if errors:
+            raise Exception('Ошибка записи данных в Elasticsearch')
+    return inner
