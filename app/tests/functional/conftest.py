@@ -5,6 +5,7 @@ from redis.asyncio import Redis
 
 from app.tests.functional.settings import ElasticParams, RedisParams
 from app.tests.functional.testdata import es_mapping
+from app.tests.functional.utils.helpers import read_json
 
 redis_params = RedisParams()
 es_params = ElasticParams()
@@ -49,11 +50,16 @@ async def es_client():
 
 @pytest_asyncio.fixture(name="es_write_data")
 def es_write_data():
-    async def inner(data: list[dict]):
-        updated, errors = await async_bulk(client=es_client, actions=data)
+    async def inner(data_path: str):
+        es_client = AsyncElasticsearch(es_params.url())
+
+        data = read_json(path=data_path)
+
+        updated, errors = await async_bulk(client=es_client, actions=data, refresh=True)
 
         await es_client.close()
 
         if errors:
-            raise Exception('Ошибка записи данных в Elasticsearch')
+            raise Exception("Ошибка записи данных в Elasticsearch")
+
     return inner
