@@ -22,14 +22,6 @@ async def delete_trash(redis):
     await redis.flushall()
 
 
-@pytest_asyncio.fixture(scope="function", autouse=True)
-async def es_create_index(es_client: AsyncElasticsearch):
-    for index, mapping in indexes_mapping.items():
-        if await es_client.indices.exists(index=index):
-            await es_client.indices.delete(index=index)
-        await es_client.indices.create(index=index, **mapping)
-
-
 @pytest_asyncio.fixture(scope="function")
 async def redis() -> Redis:
     redis = Redis(
@@ -50,10 +42,14 @@ async def es_client():
 
 @pytest_asyncio.fixture(name="es_write_data")
 def es_write_data():
-    async def inner(data_path: str):
+    async def inner(data_type: str):
         es_client = AsyncElasticsearch(es_params.url())
 
-        data = read_json(path=data_path)
+        if await es_client.indices.exists(index=data_type):
+            await es_client.indices.delete(index=data_type)
+        await es_client.indices.create(index=data_type, **indexes_mapping[data_type])
+
+        data = read_json(path=f"{data_type}.json")
 
         updated, errors = await async_bulk(client=es_client, actions=data, refresh=True)
 
