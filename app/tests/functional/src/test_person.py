@@ -1,7 +1,7 @@
 import pytest
 
-from tests.api_tests.base_classes.test_base import TestApiBase
-from tests.api_tests.test_utils import prepare_test_dir
+from app.tests.functional.base_classes.test_base import TestApiBase
+from app.tests.functional.utils.helpers import prepare_test_dir
 
 
 @pytest.mark.parametrize(
