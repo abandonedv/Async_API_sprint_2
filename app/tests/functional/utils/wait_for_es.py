@@ -1,11 +1,11 @@
-import time
 import logging
+import time
 
 from elasticsearch import Elasticsearch
 
 from app.tests.functional.settings import ElasticParams
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     params = ElasticParams()
     es_client = Elasticsearch(params.url())
     while True:

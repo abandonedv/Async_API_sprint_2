@@ -1,11 +1,11 @@
-import time
 import logging
+import time
 
 from redis import Redis
 
 from app.tests.functional.settings import RedisParams
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     params = RedisParams()
     redis_client = Redis(**params.model_dump())
     while True:

@@ -1,6 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
 ENV_PATH = "app/tests/functional/.env.test"
 
 

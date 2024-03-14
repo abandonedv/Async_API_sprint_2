@@ -1,10 +1,10 @@
 import asyncio
 
-import pytest_asyncio # noqa
-from redis.asyncio import Redis
+import pytest_asyncio  # noqa
 from elasticsearch import AsyncElasticsearch
+from redis.asyncio import Redis
 
-from app.tests.functional.settings import RedisParams, ElasticParams
+from app.tests.functional.settings import ElasticParams, RedisParams
 from app.tests.functional.testdata import es_mapping
 
 redis_params = RedisParams()
@@ -17,7 +17,7 @@ indexes_mapping = {
 }
 
 
-@pytest_asyncio.fixture(scope='session')
+@pytest_asyncio.fixture(scope="session")
 def event_loop():
     loop = asyncio.get_event_loop()
     yield loop
