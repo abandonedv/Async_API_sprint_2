@@ -21,3 +21,13 @@ class RedisParams(BaseSettings):
 
     def url(self):
         return f"{self.host}:{self.port}"
+
+
+class ServiceParams(BaseSettings):
+    model_config = SettingsConfigDict(env_prefix="SERVICE_", env_file=ENV_PATH)
+
+    host: str
+    port: int
+
+    def url(self):
+        return f"http://{self.host}:{self.port}"

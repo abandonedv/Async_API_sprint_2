@@ -1,6 +1,6 @@
 import pytest
 
-from app.tests.functional.base_classes.test_base import TestApiBase
+from app.tests.functional.src.base_classes.test_base import TestApiBase
 from app.tests.functional.utils.helpers import prepare_test_data
 
 

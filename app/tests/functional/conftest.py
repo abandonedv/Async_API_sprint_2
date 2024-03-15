@@ -1,3 +1,5 @@
+import asyncio
+
 import pytest_asyncio  # noqa
 from elasticsearch import AsyncElasticsearch
 from elasticsearch.helpers import async_bulk
@@ -17,12 +19,19 @@ indexes_mapping = {
 }
 
 
+@pytest_asyncio.fixture(scope="session")
+def event_loop():
+    loop = asyncio.get_event_loop()
+    yield loop
+    loop.close()
+
+
 @pytest_asyncio.fixture(scope="function", autouse=True)
 async def delete_trash(redis):
     await redis.flushall()
 
 
-@pytest_asyncio.fixture(scope="function")
+@pytest_asyncio.fixture(scope="session")
 async def redis() -> Redis:
     redis = Redis(
         host=redis_params.host,
@@ -33,7 +42,7 @@ async def redis() -> Redis:
     await redis.aclose()
 
 
-@pytest_asyncio.fixture(scope="function")
+@pytest_asyncio.fixture(scope="session")
 async def es_client():
     es_client = AsyncElasticsearch(es_params.url())
     yield es_client
