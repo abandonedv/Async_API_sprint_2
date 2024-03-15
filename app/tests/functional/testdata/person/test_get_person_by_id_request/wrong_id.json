@@ -1,0 +1,7 @@
+{
+  "endpoint": "/api/v1/persons/wrong_id",
+  "expected_detail": "Person with id = 'wrong_id' not found",
+  "expected_response": null,
+  "expected_status": 404,
+  "method": "GET"
+}
