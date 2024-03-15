@@ -1,6 +1,5 @@
-from httpx import AsyncClient
-
-from app.main import app
+import aiohttp
+from app.tests.functional.settings import ServiceParams
 
 
 class TestApiBase:
@@ -17,8 +16,7 @@ class TestApiBase:
         expected_response: dict | None = None,
         expected_detail: str | None = None,
     ):
-        self.client = AsyncClient(app=app)
-        self.api_url = "http://127.0.0.1:8000"
+        self.api_url = ServiceParams().url()
 
         self.headers = None
 
@@ -31,34 +29,38 @@ class TestApiBase:
         self.expected_response = expected_response
         self.expected_detail = expected_detail
 
-        self.response = None
+        self.response: aiohttp.ClientResponse | None = None
+        self.response_json: dict | None = None
 
     async def make_request(self):
-        self.response = await self.client.request(
-            url=self.endpoint,
-            method=self.method,
-            params=self.params,
-            json=self.json,
-            data=self.data,
-            headers=self.headers,
-        )
+        async with aiohttp.ClientSession() as session:
+            self.response: aiohttp.ClientResponse = await session.request(
+                url=self.endpoint,
+                method=self.method,
+                params=self.params,
+                json=self.json,
+                data=self.data,
+                headers=self.headers,
+            )
 
     async def assert_status_code(self):
-        assert self.response.status_code == self.expected_status, self.response.text
+        assert self.response.status == self.expected_status, self.response.text
 
     async def assert_expected_detail(self):
-        assert self.response.json()["detail"] == self.expected_detail, "expected_detail"
+        assert self.response_json["detail"] == self.expected_detail, "expected_detail"
 
     async def assert_expected_json(self):
-        assert self.response.json() == self.expected_response, "expected_response"
+        assert self.response_json == self.expected_response, "expected_response"
 
     async def assert_response(self) -> None:
+        self.response_json = await self.response.json()
+
         await self.assert_status_code()
 
         if self.expected_detail is not None:
             await self.assert_expected_detail()
 
-        if self.response.status_code // 100 == 2 and self.expected_response is not None:
+        if self.response.status // 100 == 2 and self.expected_response is not None:
             await self.assert_expected_json()
 
     async def perform(self) -> None:
