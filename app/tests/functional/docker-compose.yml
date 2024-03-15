@@ -13,6 +13,8 @@ services:
     depends_on:
       - elasticsearch
       - redis
+    ports:
+      - 8000:8000
 
   tests:
     build: ../../.
