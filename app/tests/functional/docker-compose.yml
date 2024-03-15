@@ -21,7 +21,7 @@ services:
     env_file:
       - .env.test
     entrypoint: >
-      sh -c "pip install -r requirements_test.txt
+      sh -c "pip install -r app/requirements_dev.txt
       && export PYTHONPATH=.
       && python3 app/tests/functional/utils/wait_for_redis.py
       && python3 app/tests/functional/utils/wait_for_es.py
@@ -29,8 +29,6 @@ services:
     depends_on:
       - elasticsearch
       - redis
-    volumes:
-      - ./requirements_test.txt:/home/server/requirements_test.txt
 
   elasticsearch:
     image: elasticsearch:8.6.2
