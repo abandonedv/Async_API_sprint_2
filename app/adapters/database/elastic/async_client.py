@@ -1,5 +1,5 @@
 from elasticsearch import AsyncElasticsearch
-from elasticsearch.exceptions import NotFoundError, ConnectionError
+from elasticsearch.exceptions import ConnectionError, NotFoundError
 from pydantic import BaseModel
 
 from app.adapters.database.abstract import NoSQLDatabaseI
