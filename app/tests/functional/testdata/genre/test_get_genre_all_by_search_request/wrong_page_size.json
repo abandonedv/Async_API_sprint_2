@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/v1/genres/search/",
+  "expected_detail": [
+    {
+      "ctx": {
+        "ge": 5
+      },
+      "input": "-1",
+      "loc": [
+        "query",
+        "page_size"
+      ],
+      "msg": "Input should be greater than or equal to 5",
+      "type": "greater_than_equal",
+      "url": "https://errors.pydantic.dev/2.6/v/greater_than_equal"
+    }
+  ],
+  "expected_status": 422,
+  "method": "GET",
+  "params": {
+    "page_size": -1,
+    "query": "TV"
+  }
+}

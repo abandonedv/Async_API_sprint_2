@@ -33,9 +33,9 @@ class TestApiBase:
         self.response: aiohttp.ClientResponse | None = None
         self.response_json: dict | None = None
 
-    async def make_request(self):
+    async def make_request(self, from_cache: bool):
         async with aiohttp.ClientSession() as session:
-            self.response: aiohttp.ClientResponse = await session.request(
+            params = dict(
                 url=self.endpoint,
                 method=self.method,
                 params=self.params,
@@ -43,6 +43,10 @@ class TestApiBase:
                 data=self.data,
                 headers=self.headers,
             )
+
+            self.response: aiohttp.ClientResponse = await session.request(**params)
+            if from_cache is True:
+                self.response: aiohttp.ClientResponse = await session.request(**params)
 
     async def assert_status_code(self):
         assert self.response.status == self.expected_status, self.response.text
@@ -64,6 +68,6 @@ class TestApiBase:
         if self.response.status // 100 == 2 and self.expected_response is not None:
             await self.assert_expected_json()
 
-    async def perform(self) -> None:
-        await self.make_request()
+    async def perform(self, from_cache: bool = False) -> None:
+        await self.make_request(from_cache=from_cache)
         await self.assert_response()
