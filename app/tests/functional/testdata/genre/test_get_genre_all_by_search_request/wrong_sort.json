@@ -1,0 +1,10 @@
+{
+  "endpoint": "/api/v1/genres/search/",
+  "expected_detail": "BadRequestError(400, 'search_phase_execution_exception', 'No mapping found for [wrong] in order to sort on')",
+  "expected_status": 400,
+  "method": "GET",
+  "params": {
+    "query": "TV",
+    "sort": "wrong"
+  }
+}

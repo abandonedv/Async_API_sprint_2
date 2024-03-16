@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/v1/persons",
+  "expected_detail": [
+      {
+
+          "ctx": {"ge": 1},
+          "input": "-1",
+          "loc": ["query", "page_number"],
+          "msg": "Input should be greater than or equal to 1",
+          "type": "greater_than_equal",
+          "url": "https://errors.pydantic.dev/2.6/v/greater_than_equal"
+      }
+  ],
+  "expected_status": 422,
+  "method": "GET",
+  "params": {
+    "page_number": -1
+  }
+}
