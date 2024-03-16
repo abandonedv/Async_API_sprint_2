@@ -52,15 +52,15 @@
    ```
    docker-compose -f app/tests/functional/docker-compose.yml up
    ```
-   
+
 2) Поменяем хосты в `.env.test` на `127.0.0.1`
    ```
    ELASTIC_HOST=127.0.0.1
    ELASTIC_PORT=9200
-   
+
    REDIS_HOST=127.0.0.1
    REDIS_PORT=6379
-   
+
    SERVICE_HOST=127.0.0.1
    SERVICE_PORT=8000
    ```
@@ -69,5 +69,5 @@
    ```
    pytest -s -vv app/tests/
    ```
-   
+
 4) Тесты должны выполниться успешно!
