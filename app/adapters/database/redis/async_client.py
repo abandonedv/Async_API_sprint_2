@@ -4,9 +4,11 @@ from typing import Type
 import orjson
 from pydantic import BaseModel
 from redis.asyncio import Redis
+from redis.exceptions import ConnectionError
 
 from app.adapters.database.abstract import CacheDatabaseI
 from app.core.config import RedisParams
+from app.utils.backoff import backoff
 
 
 class RedisClient(CacheDatabaseI):
@@ -16,6 +18,7 @@ class RedisClient(CacheDatabaseI):
         self.redis = Redis(**self.config.model_dump())
         self.cache_timeout = 60 * 5  # 5 минут
 
+    @backoff(exceptions=(ConnectionError,))
     async def get_by_id(
         self,
         _id: str,
@@ -28,6 +31,7 @@ class RedisClient(CacheDatabaseI):
 
         return model.model_validate_json(json_data=data)
 
+    @backoff(exceptions=(ConnectionError,))
     async def get_by_params(
         self,
         params: dict,
@@ -42,6 +46,7 @@ class RedisClient(CacheDatabaseI):
         data = orjson.loads(data)
         return [model(**orjson.loads(entity)) for entity in data]
 
+    @backoff(exceptions=(ConnectionError,))
     async def add_one(self, entity: BaseModel, index: str):
         await self.redis.set(
             f"{index}:{entity.id}",
@@ -49,6 +54,7 @@ class RedisClient(CacheDatabaseI):
             self.cache_timeout,
         )
 
+    @backoff(exceptions=(ConnectionError,))
     async def add_many(
         self,
         entities: list[BaseModel],
