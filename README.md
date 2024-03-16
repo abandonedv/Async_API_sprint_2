@@ -32,7 +32,7 @@
    ```
    docker-compose -f app/tests/functional/docker-compose.yml up
    ```
-   
+
 2) Смотрим логи тестов:
    ```
    docker-compose -f app/tests/functional/docker-compose.yml logs -f tests
