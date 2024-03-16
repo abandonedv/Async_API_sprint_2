@@ -39,6 +39,9 @@ def backoff(
                     await asyncio.sleep(t())
                     n += 1
 
+                    if t() >= border_sleep_time:
+                        raise e
+
         return inner
 
     return func_wrapper
