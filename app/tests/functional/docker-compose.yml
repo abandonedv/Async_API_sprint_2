@@ -25,6 +25,7 @@ services:
       && export PYTHONPATH=.
       && python3 app/tests/functional/utils/wait_for_redis.py
       && python3 app/tests/functional/utils/wait_for_es.py
+      && python3 app/tests/functional/utils/wait_for_app.py
       && pytest app/tests/functional/src"
     depends_on:
       - elasticsearch

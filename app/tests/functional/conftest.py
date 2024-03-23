@@ -7,7 +7,7 @@ from redis.asyncio import Redis
 
 from app.tests.functional.settings import ElasticParams, RedisParams
 from app.tests.functional.testdata import es_mapping
-from app.tests.functional.utils.helpers import read_json
+from app.tests.functional.utils.helpers import load_data
 
 redis_params = RedisParams()
 es_params = ElasticParams()
@@ -58,7 +58,7 @@ def es_write_data():
             await es_client.indices.delete(index=data_type)
         await es_client.indices.create(index=data_type, **indexes_mapping[data_type])
 
-        data = read_json(path=f"{data_type}.json")
+        data = load_data(data_name=f"{data_type}.json")
 
         updated, errors = await async_bulk(client=es_client, actions=data, refresh=True)
 

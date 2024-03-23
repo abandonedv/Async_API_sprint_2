@@ -20,12 +20,15 @@ services:
   app:
     build: app
     restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     env_file:
       - .env
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
 
   etl:
     image: vadimiki/etl:latest
@@ -33,12 +36,20 @@ services:
     env_file:
       - .env
     depends_on:
-      - postgres
-      - elasticsearch
-      - redis
+      db:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
 
   elasticsearch:
     image: elasticsearch:8.6.2
+    healthcheck:
+      test: curl -s http://elasticsearch:9200 >/dev/null || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 50
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -56,6 +67,11 @@ services:
     restart: always
 #    ports:
 #      - ${POSTGRES_PORT}:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -68,5 +84,7 @@ services:
     image: redis:alpine
 #    ports:
 #      - ${REDIS_PORT}:6379
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
     volumes:
       - redis_data:/var/lib/redis
