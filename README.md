@@ -1,3 +1,9 @@
+## Комментарий
+
+Мой лид `@spore-pirat` уже получил зачет
+
+---
+
 ## Ссылки
 
 1) [Ссылка на Docker образ ETL](https://hub.docker.com/r/vadimiki/etl)
